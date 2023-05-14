@@ -8,27 +8,27 @@ symbols = '!@#$%^&*()'
 numbers = '0123456789'
 
 
-print(logo)
 while True:
 	while True:
+		print(logo)
 		while True:
 			try:
 				nr_letters = int(input("\nHow many letters would you like in your password?\n"))
 				break
 			except ValueError:
-				print("Invalid input. Numbers only.")
+				print("Invalid input. Please use numbers only.")
 		while True:
 			try:
 				nr_symbols = int(input(f"\nHow many symbols would you like?\n"))
 				break
 			except ValueError:
-				print("Invalid input. Numbers only.")
+				print("Invalid input. Please use numbers only.")
 		while True:
 			try:
 				nr_numbers = int(input(f"\nHow many numbers would you like?\n"))
 				break
 			except ValueError:
-				print("Invalid input. Numbers only.")
+				print("Invalid input. Please use numbers only.")
 
 		letter_string = ''.join(random.choice(letters) for _ in range(nr_letters))
 		symbol_string = ''.join(random.choice(symbols) for _ in range(nr_symbols))
@@ -46,7 +46,7 @@ while True:
 				os.system('cls' if os.name == 'nt' else 'clear')
 				break
 			elif play_again == "n":
-				print("Goodbye.")
+				print("\nGoodbye.\n")
 				exit()
 			else:
 				print("Invalid input. 'y' or 'n' only.")
